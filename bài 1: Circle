@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+
+class Circle {
+private:
+    double area;
+    double length;
+    double perimeter;
+    double width;
+
+public:
+    Circle(double length) {
+        this->length = length;
+    }
+
+    void calcArea() {
+        area = M_PI * std::pow(length, 2);
+    }
+
+    void calcPerimeter() {
+        perimeter = 2 * M_PI * length;
+    }
+
+    double getArea() {
+        return area;
+    }
+
+    double getPerimeter() {
+        return perimeter;
+    }
+
+    void setLength(double length) {
+        this->length = length;
+    }
+};
+
+int main() {
+    // Example usage
+    Circle myCircle(5.0);
+    myCircle.calcArea();
+    myCircle.calcPerimeter();
+
+    std::cout << "Area: " << myCircle.getArea() << std::endl;
+    std::cout << "Perimeter: " << myCircle.getPerimeter() << std::endl;
+
+    return 0;
+}
